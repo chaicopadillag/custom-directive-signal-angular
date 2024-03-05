@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Products</h2>
+    </div>
+  </div>
+  <form class="row" [formGroup]="formFb">
+    <div class="col-auto">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input formControlName="colorName" type="text" class="form-control" id="name" placeholder="Mouse">
+        <span class="text text-small" customLabel [color]="color" [errors]="formFb.get('colorName')?.errors"> </span>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary" (click)="changeColor()">Change color</button>
+      </div>
+    </div>
+  </form>
+  <pre>
+    {{formFb.get('colorName')?.errors|json}}
+    {{"color: "+color}}
+  </pre>
+</div>

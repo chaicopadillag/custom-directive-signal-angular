@@ -1,0 +1,17 @@
+<div class="vstack gap-3" *ngIf="isUserExist()">
+  <div class="p-2">
+    <img [src]="currentUser()?.avatar" [alt]="currentUser()?.first_name" />
+  </div>
+  <div class="p-2">Id: {{currentUser()?.id}}</div>
+  <div class="p-2">Full Name: {{fullName()}}</div>
+  <div class="p-2">Correo: {{currentUser()?.email}}</div>
+  <div>
+    <button class="btn btn-primary mx-2" (click)="loadUser(userActive()-1)">Anterior</button>
+    <button class="btn btn-primary" (click)="loadUser(userActive()+1)">Siguiente</button>
+  </div>
+
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="!isUserExist()">
+  Usuario no encontrado!
+</div>

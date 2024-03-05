@@ -1,0 +1,38 @@
+<h2>Mutaciones</h2>
+<hr>
+<div class="row">
+  <div class="col-6">
+    <div class="row">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" placeholder="Email" #txtEmail (input)="onFieldUpdate('email',txtEmail.value)" [value]="user().email">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label class="form-label">First name</label>
+        <input type="text" class="form-control" placeholder="First name" #txtFirstName (input)="onFieldUpdate('first_name',txtFirstName.value)" [value]="user().first_name">
+      </div>
+      <div class="col">
+        <label class="form-label">Last name</label>
+        <input type="text" class="form-control" placeholder="Last name" #txtLastName (input)="onFieldUpdate('last_name',txtLastName.value)" [value]="user().last_name">
+      </div>
+      <!-- <div class="col">
+        <label class="form-label">Last name</label>
+        <input type="text" class="form-control" placeholder="Address" #txtAddress (input)="onFieldUpdate('address',txtAddress.value)">
+      </div> -->
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="row">
+      <div class="col">
+        <h3>Counter: {{counter()}}</h3>
+        <button class="btn btn-primary mx-2" (click)="increaseBy(-1)" type="button">-1</button>
+        <button class="btn btn-primary" (click)="increaseBy(1)" type="button">-2</button>
+      </div>
+    </div>
+    <pre>
+  {{user()|json}}
+</pre>
+  </div>
+</div>
